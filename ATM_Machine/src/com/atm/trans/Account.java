@@ -1,11 +1,37 @@
 package com.atm.trans;
 
+import java.util.Scanner;
+
 public class Account {
-	protected int accountnumber;
-	protected int password;
-	public Account(int accountnumber,int password) {
-		this.accountnumber=accountnumber;
-		this.password=password;
+	private int customerNumber;
+	private int password;
+	private int checkingBalance=0;
+	private int savingBalance=0;
+	Scanner input=new Scanner(System.in);
+	public int getCustomerNumber() {
+		return customerNumber;
 	}
+	public void setCustomerNumber(int customerNumber) {
+		this.customerNumber = customerNumber;
+	}
+	public int getPassword() {
+		return password;
+	}
+	public void setPassword(int password) {
+		this.password = password;
+	}
+	public int getCheckingBalance() {
+		return checkingBalance;
+	}
+	public void setCheckingBalance(int checkingBalance) {
+		this.checkingBalance = checkingBalance;
+	}
+	public int getSavingBalance() {
+		return savingBalance;
+	}
+	public void setSavingBalance(int savingBalance) {
+		this.savingBalance = savingBalance;
+	}
+	
 
 }
