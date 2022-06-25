@@ -24,14 +24,16 @@ public class Account {
 		return checkingBalance;
 	}
 	public void setCheckingBalance(int checkingBalance) {
-		this.checkingBalance = checkingBalance;
+		this.checkingBalance += checkingBalance;
 	}
 	public int getSavingBalance() {
 		return savingBalance;
 	}
 	public void setSavingBalance(int savingBalance) {
-		this.savingBalance = savingBalance;
+		this.savingBalance += savingBalance;
 	}
-	
+	public void withdrawCheckingBalance(int checkingBalance) {
+		this.checkingBalance -= checkingBalance;
+	}
 
 }

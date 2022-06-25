@@ -34,10 +34,41 @@ public class menuScreen extends Account {
 		int val=menuInput.nextInt();
 		switch(val) {
 		case 1:
+			currentAccount();
+			getAccountType();
 			break;
 		case 2:
+//			savingAccount();
+			getAccountType();
 			break;
 		case 3:
+			System.out.println("Thank you for using ATM");
+			break;
+		}
+	}
+	public void currentAccount() {
+		System.out.println("Type of transaction\n 1.Balance\n 2.Deposit\n 3.Withdraw\n 4.Back");
+		int val=menuInput.nextInt();
+		switch(val) {
+		case 1:
+			int res=getCheckingBalance();
+			System.out.println("Your current account Balance: "+res);
+			currentAccount();
+			break;
+		case 2:
+			System.out.println("Enter ammount to deposit: ");
+			res=menuInput.nextInt();
+			setCheckingBalance(res);
+			currentAccount();
+			currentAccount();
+			break;
+		case 3:
+			System.out.println("Enter ammount to withdraw: ");
+			res=menuInput.nextInt();
+			withdrawCheckingBalance(res);
+			currentAccount();
+			break;
+		case 4:
 			System.out.println("Thank you for using ATM");
 			break;
 		}
