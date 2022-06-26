@@ -35,5 +35,8 @@ public class Account {
 	public void withdrawCheckingBalance(int checkingBalance) {
 		this.checkingBalance -= checkingBalance;
 	}
+	public void withdrawSavingBalance(int savingBalance) {
+		this.savingBalance -= savingBalance;
+	}
 
 }

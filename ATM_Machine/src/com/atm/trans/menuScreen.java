@@ -26,9 +26,11 @@ public class menuScreen extends Account {
 		}
 		else {
 			System.out.println("Invalid username and password");
+			welcome();
 		}
 
 	}
+	
 	public void getAccountType() {
 		System.out.println("Type of your account\n 1.Current account\n 2.Savings account\n 3.Exit");
 		int val=menuInput.nextInt();
@@ -38,16 +40,20 @@ public class menuScreen extends Account {
 			getAccountType();
 			break;
 		case 2:
-//			savingAccount();
+			savingAccount();
 			getAccountType();
 			break;
 		case 3:
 			System.out.println("Thank you for using ATM");
 			break;
+		default:
+			System.out.println("Please select correct option");
+			break;
 		}
 	}
+	
 	public void currentAccount() {
-		System.out.println("Type of transaction\n 1.Balance\n 2.Deposit\n 3.Withdraw\n 4.Back");
+		System.out.println("Type of current transaction\n 1.Balance\n 2.Deposit\n 3.Withdraw\n 4.Back");
 		int val=menuInput.nextInt();
 		switch(val) {
 		case 1:
@@ -60,7 +66,6 @@ public class menuScreen extends Account {
 			res=menuInput.nextInt();
 			setCheckingBalance(res);
 			currentAccount();
-			currentAccount();
 			break;
 		case 3:
 			System.out.println("Enter ammount to withdraw: ");
@@ -69,7 +74,41 @@ public class menuScreen extends Account {
 			currentAccount();
 			break;
 		case 4:
-			System.out.println("Thank you for using ATM");
+			System.out.println("Returning to mainmenu!");
+			getAccountType();
+			break;
+		default:
+			System.out.println("Please select correct option");
+			break;
+		}
+	}
+	public void savingAccount() {
+		System.out.println("Type of saving transaction\n 1.Balance\n 2.Deposit\n 3.Withdraw\n 4.Back");
+		int val=menuInput.nextInt();
+		switch(val) {
+		case 1:
+			int res=getSavingBalance();
+			System.out.println("Your saving account Balance: "+res);
+			savingAccount();
+			break;
+		case 2:
+			System.out.println("Enter ammount to deposit: ");
+			res=menuInput.nextInt();
+			setSavingBalance(res);
+			savingAccount();
+			break;
+		case 3:
+			System.out.println("Enter ammount to withdraw: ");
+			res=menuInput.nextInt();
+			withdrawSavingBalance(res);
+			savingAccount();
+			break;
+		case 4:
+			System.out.println("Returning to mainmenu");
+			getAccountType();
+			break;
+		default:
+			System.out.println("Please select correct option");
 			break;
 		}
 	}
